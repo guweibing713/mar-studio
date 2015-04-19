@@ -1,0 +1,20 @@
+# Global Git Ignore file.
+#
+# 
+
+# ignore all .a .dll [etc] file
+*.a
+*.dll
+*.sdf
+
+# except libcocos2d.dll
+!libcocos2d.dll
+
+# ignore MyGame [etc] dir
+MyGame/
+cocos2d/
+Debug.win32/
+
+
+
+
