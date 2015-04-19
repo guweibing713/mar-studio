@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<roles
+>
+	<role
+		id = "0"
+		image_name = "p_00_0.png"
+		type = "boss"
+		width = "2"
+		height = "2"
+	></role>
+	<role
+		id = "1"
+		image_name = "p_02_0.png"
+		type = "general_hor"
+		width = "2"
+		height = "1"
+	></role>
+	<role
+		id = "2"
+		image_name = "p_04_0.png"
+		type = "general_hor"
+		width = "2"
+		height = "1"
+	></role>
+	<role
+		id = "3"
+		image_name = "p_06_0.png"
+		type = "general_hor"
+		width = "2"
+		height = "1"
+	></role>
+	<role
+		id = "4"
+		image_name = "p_08_0.png"
+		type = "general_hor"
+		width = "2"
+		height = "1"
+	></role>
+	<role
+		id = "5"
+		image_name = "p_10_0.png"
+		type = "general_hor"
+		width = "2"
+		height = "1"
+	></role>
+	<role
+		id = "6"
+		image_name = "p_01_0.png"
+		type = "general_ver"
+		width = "1"
+		height = "2"
+	></role>
+	<role
+		id = "7"
+		image_name = "p_03_0.png"
+		type = "general_ver"
+		width = "1"
+		height = "2"
+	></role>
+	<role
+		id = "8"
+		image_name = "p_05_0.png"
+		type = "general_ver"
+		width = "1"
+		height = "2"
+	></role>
+	<role
+		id = "9"
+		image_name = "p_07_0.png"
+		type = "general_ver"
+		width = "1"
+		height = "2"
+	></role>
+	<role
+		id = "10"
+		image_name = "p_09_0.png"
+		type = "general_ver"
+		width = "1"
+		height = "2"
+	></role>
+	<role
+		id = "11"
+		image_name = "p_11_0.png"
+		type = "soldier"
+		width = "1"
+		height = "1"
+	></role>
+</roles>
