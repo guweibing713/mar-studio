@@ -141,7 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\data\Level.cpp" />
     <ClCompile Include="..\Classes\data\Role.cpp" />
     <ClCompile Include="..\Classes\GameLayer.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\AboutScene.cpp" />
     <ClCompile Include="..\Classes\RoleSprite.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,7 +152,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\data\Role.h" />
     <ClInclude Include="..\Classes\GameDefine.h" />
     <ClInclude Include="..\Classes\GameLayer.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\AboutScene.h" />
     <ClInclude Include="..\Classes\RoleSprite.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />

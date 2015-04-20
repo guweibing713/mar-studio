@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
 #include "data/Role.h"
 #include "data/Level.h"
 #include "GameLayer.h"
