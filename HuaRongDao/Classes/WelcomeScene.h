@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"  
 
+class Level;
 class WelcomeScene : public cocos2d::Layer
 {
 public:

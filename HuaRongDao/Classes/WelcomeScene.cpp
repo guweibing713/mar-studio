@@ -2,6 +2,7 @@
 #include "GameDefine.h" 
 #include "GameLayer.h" 
 #include "AboutScene.h"
+#include "data/Level.h"  
 
 USING_NS_CC;
 
@@ -83,6 +84,24 @@ void WelcomeScene::menuStartCallback(Ref* pSender)
 	TransitionScene * reScene = NULL;
 	float t = 1.2f;
 	auto scene = GameLayer::createScene();
+
+	//AppDelegate已经初始化配置Level了.
+	//Level::initStatic();
+	//((GameLayer*)scene->getChildByTag(0))->setPLevel(Level::s_levelVec.at(1));
+	
+	// m_pLevel引用+1,不然关闭游戏会报错.
+	//CC_SAFE_RETAIN(((GameLayer*)scene->getChildByTag(0))->getPLevel());
+	
+	//(引用增1放到GameLayer内. 增加setPLevel2方法设置当前Level,引用增1)
+	((GameLayer*)scene->getChildByTag(0))->resetPLevel(Level::s_levelVec.at(2));
+	
+	// 初始化地图挪到外面后 背景图绘制比角色晚,因此Role被覆盖了.
+	// 采用resetPLevel之后,恢复之前的setPLevel方法,背景不会覆盖Role了.????
+	// 原因:点击下面的其他方法menuOptionCallback 进入到GameLayer,而这些方法没有设置Level.
+	
+	// 初始化地图
+	((GameLayer*)scene->getChildByTag(0))->initMap();
+
 	//    CCTransitionFade
 	//    作用：创建一个逐渐过渡到目标颜色的切换动画
 	//    参数1：过渡动作的持续时间
@@ -97,7 +116,7 @@ void WelcomeScene::menuStartCallback(Ref* pSender)
 	reScene  =TransitionSlideInR::create(t, scene);
 	// run
 	//CCDirector::sharedDirector()->replaceScene(scene);
-	Director::getInstance()->replaceScene(reScene);
+	Director::getInstance()->replaceScene(scene);
 }
 
 void WelcomeScene::menuOptionCallback(Ref* pSender)

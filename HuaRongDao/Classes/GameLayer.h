@@ -30,6 +30,9 @@ public:
 
 	void myClock(float dt);
 	std::string getFormatTime(int t);
+	//static GameLayer* gameLayer();
+	//static cocos2d::Scene* s2GameSceneInstance();
+	void resetPLevel(Level* level);
 
 	void menuStartCallback(Ref* pSender);
 private:
@@ -44,5 +47,8 @@ private:
 	int steps; 
 	int m_time;
 	CC_SYNTHESIZE(Level *, m_pLevel, PLevel);//ËùÑ¡¹Ø¿¨
+
+	//static cocos2d::Scene* game333SceneInstance;
+
 };
 #endif

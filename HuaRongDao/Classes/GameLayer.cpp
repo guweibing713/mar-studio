@@ -7,11 +7,11 @@
 USING_NS_CC ;
 Scene* GameLayer::createScene()
 {
-	auto scene = Scene::create() ;
+	auto gameSceneInstance = Scene::create() ;
 	auto layer = GameLayer::create() ;
 	layer->setTag(0);
-	scene->addChild(layer);
-	return scene ;
+	gameSceneInstance->addChild(layer, 0, "gameLayer");
+	return gameSceneInstance;
 }
 GameLayer::GameLayer()
 	:m_pLevel(nullptr)
@@ -31,6 +31,25 @@ GameLayer::~GameLayer()
 {
 	CC_SAFE_RELEASE_NULL(m_pLevel) ;
 }
+
+//Scene* GameLayer::s2GameSceneInstance()
+//{
+//	//类GameLayer 不能访问自己定义的静态变量.
+//	return GameLayer::game333SceneInstance;
+//}
+
+//GameLayer* GameLayer::gameLayer()
+//{
+//	return (GameLayer*)game333SceneInstance->getChildByName("gameLayer");
+//}
+
+void GameLayer::resetPLevel(Level* level)
+{
+	m_pLevel = level;
+	CC_SAFE_RETAIN(m_pLevel) ;
+
+}
+
 bool GameLayer::init()
 {
 	Size size = Director::getInstance()->getWinSize();
@@ -43,7 +62,7 @@ bool GameLayer::init()
 	exitSprite->setPosition(size.width / 2, GAME_SCREEN_HEIGHT * 50 / 480 - exitSprite->getContentSize().height/3);
 	addChild(exitSprite);
 
-	initMap() ;
+	//initMap() ;
 
 	auto lisener = EventListenerTouchOneByOne::create() ;
 	lisener->onTouchBegan = CC_CALLBACK_2(GameLayer::onTouchBegan,this) ;
