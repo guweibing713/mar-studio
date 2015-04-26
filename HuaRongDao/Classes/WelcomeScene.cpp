@@ -93,11 +93,11 @@ void WelcomeScene::menuStartCallback(Ref* pSender)
 	//CC_SAFE_RETAIN(((GameLayer*)scene->getChildByTag(0))->getPLevel());
 	
 	//(引用增1放到GameLayer内. 增加setPLevel2方法设置当前Level,引用增1)
-	((GameLayer*)scene->getChildByTag(0))->resetPLevel(Level::s_levelVec.at(2));
-	
+	//((GameLayer*)scene->getChildByTag(0))->resetPLevel(Level::s_levelVec.at(2));
+	GameLayer::gameLayer()->resetPLevel(Level::s_levelVec.at(1));
 	// 初始化地图挪到外面后 背景图绘制比角色晚,因此Role被覆盖了.
 	// 采用resetPLevel之后,恢复之前的setPLevel方法,背景不会覆盖Role了.????
-	// 原因:点击下面的其他方法menuOptionCallback 进入到GameLayer,而这些方法没有设置Level.
+	// 原因:点击下面的其他方法menuOptionCallback 进入到GameLayer,而这些方法没有initMap设置Level.
 	
 	// 初始化地图
 	((GameLayer*)scene->getChildByTag(0))->initMap();

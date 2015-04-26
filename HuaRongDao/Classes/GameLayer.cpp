@@ -5,13 +5,15 @@
 #include "GameDefine.h" 
 
 USING_NS_CC ;
+// 初始化静态变量
+Scene* GameLayer::game333SceneInstance = nullptr;
 Scene* GameLayer::createScene()
 {
-	auto gameSceneInstance = Scene::create() ;
+	game333SceneInstance = Scene::create();
 	auto layer = GameLayer::create() ;
 	layer->setTag(0);
-	gameSceneInstance->addChild(layer, 0, "gameLayer");
-	return gameSceneInstance;
+	game333SceneInstance->addChild(layer, 0, "gameLayer");
+	return game333SceneInstance;
 }
 GameLayer::GameLayer()
 	:m_pLevel(nullptr)
@@ -32,16 +34,25 @@ GameLayer::~GameLayer()
 	CC_SAFE_RELEASE_NULL(m_pLevel) ;
 }
 
-//Scene* GameLayer::s2GameSceneInstance()
-//{
-//	//类GameLayer 不能访问自己定义的静态变量.
-//	return GameLayer::game333SceneInstance;
-//}
+Scene* GameLayer::s2GameSceneInstance()
+{
+	//判断m_singleton是否已被实例化， 如果没有，将之实例
+	if (nullptr == game333SceneInstance)
+	{
+		game333SceneInstance = Scene::create();
+	}
+	//类GameLayer 不能访问自己定义的静态变量.
+	return GameLayer::game333SceneInstance;
+}
 
-//GameLayer* GameLayer::gameLayer()
-//{
-//	return (GameLayer*)game333SceneInstance->getChildByName("gameLayer");
-//}
+GameLayer* GameLayer::gameLayer()
+{
+	if (nullptr == game333SceneInstance)
+	{
+		game333SceneInstance = Scene::create();
+	}
+	return (GameLayer*)game333SceneInstance->getChildByName("gameLayer");
+}
 
 void GameLayer::resetPLevel(Level* level)
 {
