@@ -3,6 +3,7 @@
 #include "GameLayer.h" 
 #include "AboutScene.h"
 #include "data/Level.h"  
+#include "Instruction.h"
 
 USING_NS_CC;
 
@@ -141,7 +142,7 @@ void WelcomeScene::menuInstructionCallback(Ref* pSender)
 {
 	TransitionScene * reScene = NULL;
 	float t = 1.2f;
-	auto scene = GameLayer::createScene();
+	auto scene = Instruction::createScene();
 	reScene = TransitionSlideInR::create(t, scene);
 	Director::getInstance()->replaceScene(reScene);
 }
